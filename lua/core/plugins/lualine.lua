@@ -1,12 +1,12 @@
-require('lualine').setup {
+require("lualine").setup {
   options = {
-    theme = 'gruvbox',
+    theme = "nightfox",
     icons_enabled = true,
   },
   sections = {
     lualine_a = {
       {
-        'filename',
+        "filename",
         path = 1,
       }
     }
