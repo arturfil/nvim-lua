@@ -1,4 +1,4 @@
-require("core.plugins.night-owl")
+require("core.plugins.theme")
 require("core.plugins.lualine")
 require("core.plugins.nvim-tree")
 require("core.plugins.treesitter")
