@@ -23,6 +23,7 @@ return require("packer").startup(function(use)
 
   -- autopairs
   use "windwp/nvim-autopairs"
+  use "windwp/nvim-ts-autotag"
 
   -- terminal line
   use "nvim-lualine/lualine.nvim"
