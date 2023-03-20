@@ -4,9 +4,9 @@ vim.o.relativenumber = true
 vim.o.number = true
 
 
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.shiftwidth = 2
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 -- This keybinding uses jk as escape but don't know if like it 

@@ -19,6 +19,7 @@ return require("packer").startup(function(use)
   use "Julpikar/night-owl.nvim"
   use "EdenEast/nightfox.nvim"
   use "ellisonleao/gruvbox.nvim"
+  use "rebelot/kanagawa.nvim"
 
   -- autopairs
   use "windwp/nvim-autopairs"
