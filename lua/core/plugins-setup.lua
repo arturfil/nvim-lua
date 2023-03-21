@@ -38,6 +38,9 @@ return require("packer").startup(function(use)
   use "hrsh7th/cmp-nvim-lsp"
   use "saadparwaiz1/cmp_luasnip"
 
+  -- navigation
+  use "christoomey/vim-tmux-navigator"
+
   -- snippets
   use "L3MON4D3/LuaSnip"
   use "rafamadriz/friendly-snippets"
