@@ -37,3 +37,5 @@ require("lspconfig").tailwindcss.setup {
   capabilities = capabilites,
   on_attach = on_attach
 }
+
+require("lspconfig").gopls.setup {}
