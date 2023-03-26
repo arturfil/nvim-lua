@@ -16,10 +16,12 @@ return require("packer").startup(function(use)
 
   -- themes
   use "folke/tokyonight.nvim"
-  use "Julpikar/night-owl.nvim"
+  -- use "Julpikar/night-owl.nvim"
   use "EdenEast/nightfox.nvim"
   use "ellisonleao/gruvbox.nvim"
   use "rebelot/kanagawa.nvim"
+  use { "bluz71/vim-nightfly-colors", as = "nightfly" }
+  use 'oxfist/night-owl.nvim'
 
   -- autopairs
   use "windwp/nvim-autopairs"
