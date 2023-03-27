@@ -5,5 +5,7 @@ require("core.plugins.treesitter")
 require("core.plugins.telescope")
 require("core.plugins.lsp_config")
 require("core.plugins.completions")
+require("core.plugins.nvim-cmp")
 require("core.plugins.autopairs")
+require("core.plugins.rust-tools")
 

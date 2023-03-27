@@ -37,8 +37,9 @@ return require("packer").startup(function(use)
 
   -- completion plugins 
   use "hrsh7th/nvim-cmp"
+  use "hrsh7th/cmp-buffer"
+  use "hrsh7th/cmp-path"
   use "hrsh7th/cmp-nvim-lsp"
-  use "saadparwaiz1/cmp_luasnip"
 
   -- navigation
   use "christoomey/vim-tmux-navigator"
@@ -46,6 +47,7 @@ return require("packer").startup(function(use)
   -- snippets
   use "L3MON4D3/LuaSnip"
   use "rafamadriz/friendly-snippets"
+  use "saadparwaiz1/cmp_luasnip"
 
   -- lsp -> language server protocol
   use {
@@ -53,6 +55,7 @@ return require("packer").startup(function(use)
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig"
   }
+  use 'simrat39/rust-tools.nvim'
 
   -- View, preview screen
   use {

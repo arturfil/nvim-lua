@@ -1,6 +1,12 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "lua_ls", "tailwindcss", "tsserver", "gopls"}
+    ensure_installed = { 
+        "lua_ls",
+        "tailwindcss",
+        "tsserver",
+        "gopls",
+        "rust_analyzer"
+    }
 })
 
 local on_attach = function(_, _)
@@ -39,3 +45,11 @@ require("lspconfig").tailwindcss.setup {
 }
 
 require("lspconfig").gopls.setup {}
+
+require("lspconfig").rust_analyzer.setup {
+    capabilites = capabilites,
+    on_attach = on_attach,
+    cmd = {
+        "rustup", "run", "stable", "rust-analyzer"
+    }
+}
