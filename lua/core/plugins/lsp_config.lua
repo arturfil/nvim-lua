@@ -9,6 +9,8 @@ require("mason-lspconfig").setup({
     }
 })
 
+
+local lspconfig = require("lspconfig")
 local on_attach = function(_, _)
   -- if client.server_capabilites.documentFormattingProvider then
   --   vim.api.nvim_command [[augroup Format]]
@@ -29,24 +31,24 @@ end
 
 local capabilites = require("cmp_nvim_lsp").default_capabilities()
 
-require("lspconfig").lua_ls.setup {
+lspconfig.lua_ls.setup {
   capabilities = capabilities,
   on_attach = on_attach
 }
-require("lspconfig").tsserver.setup {
+lspconfig.tsserver.setup {
   capabilities = capabilites,
   on_attach = on_attach,
   filetypes = {"typescript", "typescriptreact", "typescript.tsx" },
   cmd = { "typescript-language-server", "--stdio" }
 }
-require("lspconfig").tailwindcss.setup {
+lspconfig.tailwindcss.setup {
   capabilities = capabilites,
   on_attach = on_attach
 }
 
-require("lspconfig").gopls.setup {}
+lspconfig.gopls.setup {}
 
-require("lspconfig").rust_analyzer.setup {
+lspconfig.rust_analyzer.setup {
     capabilites = capabilites,
     on_attach = on_attach,
     cmd = {
