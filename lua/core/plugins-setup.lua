@@ -49,11 +49,18 @@ return require("packer").startup(function(use)
   use "rafamadriz/friendly-snippets"
   use "saadparwaiz1/cmp_luasnip"
 
+  -- formatters
+  use "jose-elias-alvarez/null-ls.nvim"
+  use "jayp0521/mason-null-ls.nvim"
+
   -- lsp -> language server protocol
   use {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig"
+    "neovim/nvim-lspconfig",
+    "glepnir/lspsaga.nvim", branc = "main", -- for window vscode recommend
+    "jose-elias-alvarez/typescript.nvim",
+    "onsails/lspkind.nvim"
   }
   use 'simrat39/rust-tools.nvim'
 

@@ -1,7 +1,13 @@
 vim.o.termguicolors = true
 
--- vim.cmd[[ set background=dark ]]
+vim.cmd[[ set background=dark ]]
 vim.cmd[[colorscheme night-owl ]]
+
+local status, _ = pcall(vim.cmd, "colorscheme night-owl")
+if not status then
+    print("Color Scheme not found!")
+    return
+end
 -- vim.cmd[[colorscheme tokyonight ]]
 
 -- require("tokyonight").setup({
