@@ -59,3 +59,10 @@ lspconfig.gopls.setup({
     capabilities = capabilities,
     on_attach = on_attach
 })
+
+lspconfig.rust_analyzer.setup({
+    server = {
+        capabilities = capabilities,
+        on_attach = on_attach
+    }
+})
