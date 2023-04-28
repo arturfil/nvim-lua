@@ -37,6 +37,7 @@ local on_attach = function(client, bufnr)
 end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local util = require("lspconfig/util")
 
 lspconfig.html.setup({
     capabilities = capabilities,
@@ -63,6 +64,15 @@ lspconfig.gopls.setup({
 lspconfig.rust_analyzer.setup({
     server = {
         capabilities = capabilities,
-        on_attach = on_attach
+        on_attach = on_attach,
+        filetypes= {"rust"},
+        root_dir = util.root_pattern("Cargo.toml"),
+        settings = {
+            ["rust_analyzer"] = {
+                cargo = {
+                    allFeatuers = true,
+                },
+            },
+        },
     }
 })
