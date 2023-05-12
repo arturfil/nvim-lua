@@ -1,9 +1,11 @@
 vim.o.termguicolors = true
 
-vim.cmd[[ set background=dark ]]
-vim.cmd[[colorscheme night-owl ]]
+-- vim.cmd[[ set background=dark ]]
+-- vim.cmd[[colorscheme night-owl ]]
+vim.cmd [[ colorscheme catppuccin ]]
 
-local status, _ = pcall(vim.cmd, "colorscheme night-owl")
+-- local status, _ = pcall(vim.cmd, "colorscheme night-owl")
+local status, _ = pcall(vim.cmd, "colorscheme kanagawa")
 if not status then
     print("Color Scheme not found!")
     return

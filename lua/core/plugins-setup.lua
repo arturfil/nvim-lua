@@ -18,6 +18,7 @@ return require("packer").startup(function(use)
   use "folke/tokyonight.nvim"
   -- use "Julpikar/night-owl.nvim"
   use "EdenEast/nightfox.nvim"
+  use { "catppuccin/nvim", as = "catppuccin" }
   use "ellisonleao/gruvbox.nvim"
   use "rebelot/kanagawa.nvim"
   use { "bluz71/vim-nightfly-colors", as = "nightfly" }
