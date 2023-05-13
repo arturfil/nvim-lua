@@ -36,6 +36,10 @@ return require("packer").startup(function(use)
   use "nvim-tree/nvim-web-devicons"
   use "nvim-treesitter/nvim-treesitter"
 
+  -- debugger
+  use "mfussenegger/nvim-dap"
+  use "rcarriga/nvim-dap-ui"
+
   -- completion plugins 
   use "hrsh7th/nvim-cmp"
   use "hrsh7th/cmp-buffer"
