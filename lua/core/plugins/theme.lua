@@ -1,11 +1,14 @@
 vim.o.termguicolors = true
 
--- vim.cmd[[ set background=dark ]]
+vim.cmd[[ set background=dark ]]
 -- vim.cmd[[colorscheme night-owl ]]
-vim.cmd [[ colorscheme catppuccin ]]
+-- vim.cmd [[ colorscheme catppuccin ]]
+--
+
 
 -- local status, _ = pcall(vim.cmd, "colorscheme night-owl")
 local status, _ = pcall(vim.cmd, "colorscheme kanagawa")
+-- local status, _ = pcall(vim.cmd, "colorscheme onedark")
 if not status then
     print("Color Scheme not found!")
     return
@@ -21,7 +24,10 @@ end
 --     },
 --     
 -- })
+--
 
+-- make the background of the line transparent and the numbers of color gray-purple
+vim.api.nvim_set_hl(0, 'LineNr', { fg = "#716682" })
 -- vim.cmd[[colorscheme tokyonight-night ]]
 -- vim.cmd[[colorscheme kanagawa ]]
 -- vim.cmd[[ colorscheme nightfox ]]
