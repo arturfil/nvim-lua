@@ -42,6 +42,9 @@ return require("packer").startup(function(use)
   use "mfussenegger/nvim-dap"
   use "rcarriga/nvim-dap-ui"
 
+  -- go debbuger
+  use "leoluz/nvim-dap-go"
+
   -- completion plugins 
   use "hrsh7th/nvim-cmp"
   use "hrsh7th/cmp-buffer"
