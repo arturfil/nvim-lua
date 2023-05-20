@@ -6,8 +6,9 @@ vim.cmd[[ set background=dark ]]
 --
 
 
--- local status, _ = pcall(vim.cmd, "colorscheme night-owl")
-local status, _ = pcall(vim.cmd, "colorscheme kanagawa")
+local status, _ = pcall(vim.cmd, "colorscheme night-owl")
+-- local status, _ = pcall(vim.cmd, "colorscheme kanagawa")
+-- local status, _ = pcall(vim.cmd, "colorscheme nightfox")
 -- local status, _ = pcall(vim.cmd, "colorscheme onedark")
 if not status then
     print("Color Scheme not found!")
@@ -27,7 +28,8 @@ end
 --
 
 -- make the background of the line transparent and the numbers of color gray-purple
-vim.api.nvim_set_hl(0, 'LineNr', { fg = "#716682" })
+-- vim.api.nvim_set_hl(0, "LineNr", { fg = "#716682" }) -- use this w/ kanagawa
+vim.api.nvim_set_hl(0, "Normal", { fg = "#716682", bg = "#101e2c"})
 -- vim.cmd[[colorscheme tokyonight-night ]]
 -- vim.cmd[[colorscheme kanagawa ]]
 -- vim.cmd[[ colorscheme nightfox ]]
