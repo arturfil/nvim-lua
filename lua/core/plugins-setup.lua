@@ -23,8 +23,9 @@ return require("packer").startup(function(use)
   use "ellisonleao/gruvbox.nvim"
   use "olimorris/onedarkpro.nvim"
   use "rebelot/kanagawa.nvim"
+  use "arturfil/night-wolf.nvim"
   use { "bluz71/vim-nightfly-colors", as = "nightfly" }
-  use 'oxfist/night-owl.nvim'
+  -- use 'oxfist/night-owl.nvim'
 
   -- autopairs
   use "windwp/nvim-autopairs"
