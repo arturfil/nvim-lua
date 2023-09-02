@@ -29,6 +29,14 @@ end
 -- })
 --
 
+-- in case you want to make your bg transparent
+vim.api.nvim_command([[
+    augroup ChangeBackgroudColour
+    autocmd colorscheme * :hi normal guibg=#0a0a0a
+    augroup END
+]])
+
+
 -- make the background of the line transparent and the numbers of color gray-purple
 -- vim.api.nvim_set_hl(0, "LineNr", { fg = "#716682" }) -- use this w/ kanagawa, overrides number line color
 -- vim.api.nvim_set_hl(0, "Normal", { bg = "#101e2c"}) -- use this for night-owl, overrides background of windows
