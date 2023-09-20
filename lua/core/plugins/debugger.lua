@@ -15,6 +15,24 @@ dap.listeners.before.event_exited["dapui_config"] = function()
     dapui.close()
 end
 
+dap.adapters.python = {
+    type = "executable",
+    command = "python",
+    args = {"-m", "debugpy.adapter"},
+}
+
+dap.configurations.python = {
+    {
+        type = "python",
+        request = "launch",
+        name = "Launch file",
+        program = "${file}",
+        pythonPath = function()
+            return "/usr/bin/python3"
+        end,
+
+}
+
 -- golang debugger
 dap_go.setup {
     dap_configurations = {
@@ -35,7 +53,10 @@ dap_go.setup {
     },
 }
 
-vim.keymap.set("n", "<Leader>dt", ":DapToggleBreakpoint<CR>")
-vim.keymap.set("n", "<Leader>dx", ":DapTerminate<CR>")
-vim.keymap.set("n", "<Leader>do", ":DapStepOver<CR>")
+vim.keymap.set("n", "<Leader>dt", ":DapUiToggle<CR>", {norempat=true})
+vim.keymap.set("n", "<Leader>db", ":DapToggleBreakpoint<CR>", {norempat=true})
+vim.keymap.set("n", "<Leader>dc", ":DapContinue<CR>", {norempat=true})
+vim.keymap.set("n", "<Leader>dx", ":DapTerminate<CR>", {norempat=true})
+vim.keymap.set("n", "<Leader>dr", ":lua require('dapui').open({reset = true})<CR>", {norempat=true})
+vim.keymap.set("n", "<Leader>do", ":DapStepOver<CR>", {norempat=true})
 
