@@ -30,7 +30,7 @@ dap.configurations.python = {
         pythonPath = function()
             return "/usr/bin/python3"
         end,
-
+    },
 }
 
 -- golang debugger
@@ -53,10 +53,10 @@ dap_go.setup {
     },
 }
 
-vim.keymap.set("n", "<Leader>dt", ":DapUiToggle<CR>", {norempat=true})
-vim.keymap.set("n", "<Leader>db", ":DapToggleBreakpoint<CR>", {norempat=true})
-vim.keymap.set("n", "<Leader>dc", ":DapContinue<CR>", {norempat=true})
-vim.keymap.set("n", "<Leader>dx", ":DapTerminate<CR>", {norempat=true})
-vim.keymap.set("n", "<Leader>dr", ":lua require('dapui').open({reset = true})<CR>", {norempat=true})
-vim.keymap.set("n", "<Leader>do", ":DapStepOver<CR>", {norempat=true})
+vim.keymap.set("n", "<Leader>dt", ":DapUiToggle<CR>", {noremap=true})
+vim.keymap.set("n", "<Leader>db", ":DapToggleBreakpoint<CR>", {noremap=true})
+vim.keymap.set("n", "<Leader>dc", ":DapContinue<CR>", {noremap=true})
+vim.keymap.set("n", "<Leader>dx", ":DapTerminate<CR>", {noremap=true})
+vim.keymap.set("n", "<Leader>dr", ":lua require('dapui').open({reset = true})<CR>", {noremap=true})
+vim.keymap.set("n", "<Leader>do", ":DapStepOver<CR>", {noremap=true})
 
