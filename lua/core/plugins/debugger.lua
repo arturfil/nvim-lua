@@ -21,15 +21,18 @@ dap.adapters.python = {
     args = {"-m", "debugpy.adapter"},
 }
 
+dap.adapters.python = {
+    type = 'executable',
+    command = 'python',
+    args = {'-m', 'debugpy.adapter'},
+}
+
 dap.configurations.python = {
     {
-        type = "python",
-        request = "launch",
-        name = "Launch file",
-        program = "${file}",
-        pythonPath = function()
-            return "/usr/bin/python3"
-        end,
+        type = 'python',
+        request = 'launch',
+        name = 'Launch file',
+        program = '${file}',
     },
 }
 
@@ -53,10 +56,11 @@ dap_go.setup {
     },
 }
 
-vim.keymap.set("n", "<Leader>dt", ":DapUiToggle<CR>", {noremap=true})
+
 vim.keymap.set("n", "<Leader>db", ":DapToggleBreakpoint<CR>", {noremap=true})
 vim.keymap.set("n", "<Leader>dc", ":DapContinue<CR>", {noremap=true})
 vim.keymap.set("n", "<Leader>dx", ":DapTerminate<CR>", {noremap=true})
+vim.keymap.set("n", "<Leader>dt", ":DapUiToggle<CR>", {noremap=true})
 vim.keymap.set("n", "<Leader>dr", ":lua require('dapui').open({reset = true})<CR>", {noremap=true})
 vim.keymap.set("n", "<Leader>do", ":DapStepOver<CR>", {noremap=true})
 

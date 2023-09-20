@@ -40,8 +40,21 @@ return require("packer").startup(function(use)
   use "nvim-treesitter/nvim-treesitter"
 
   -- debugger
+  -- use "puremourning/vimspector"
   use "mfussenegger/nvim-dap"
   use "rcarriga/nvim-dap-ui"
+
+  -- python debugger
+  -- { "mfussenegger/nvim-dap-python",
+      -- ft = "python",
+      -- dependencies = {
+      --     "mfussenegger/nvim-dap",
+      -- },
+      -- config = function(_, opts)
+      --     local path = "/opt/homebrew/bin/python3"
+      --     require("dap-python").setup(path)
+      -- end,
+  -- } 
 
   -- go debbuger
   use "leoluz/nvim-dap-go"
@@ -69,7 +82,7 @@ return require("packer").startup(function(use)
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
-    "glepnir/lspsaga.nvim", branc = "main", -- for window vscode recommend
+     "glepnir/lspsaga.nvim", branc = "main", -- for window vscode recommend
     "jose-elias-alvarez/typescript.nvim",
     "onsails/lspkind.nvim"
   }
