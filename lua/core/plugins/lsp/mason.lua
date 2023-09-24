@@ -16,6 +16,7 @@ mason_lspconfig.setup({
         "tailwindcss",
         "tsserver",
         "gopls",
+        "pyright",
         "rust_analyzer"
     }
 })
