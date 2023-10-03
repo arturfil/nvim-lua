@@ -4,6 +4,10 @@ if not saga_status then
 end
 
 saga.setup({
+    finder = {
+        max_height = 0.6,
+        default = "ref+imp+def",
+    },
     move_in_saga = { prev = "<C-k>", next = "<C-j>" },
     finder_action_keys = {
         open = "<CR>",
