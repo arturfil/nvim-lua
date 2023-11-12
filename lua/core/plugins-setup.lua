@@ -1,48 +1,47 @@
-local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath("data").."/site/pack/packer/start/packer.nvim"
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({"git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path})
-    vim.cmd [[packadd packer.nvim]]
-    return true
-  end
-  return false
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
-local packer_bootstrap = ensure_packer()
-
-return require("packer").startup(function(use)
-  use "wbthomason/packer.nvim"
+local plugins = {
 
   -- themes
-  use "folke/tokyonight.nvim"
-  -- use "Julpikar/night-owl.nvim"
-  use "dracula/vim"
-  use "EdenEast/nightfox.nvim"
-  use { "catppuccin/nvim", as = "catppuccin" }
-  use "ellisonleao/gruvbox.nvim"
-  use "olimorris/onedarkpro.nvim"
-  use "rebelot/kanagawa.nvim"
-  use "arturfil/night-wolf.nvim"
-  use { "bluz71/vim-nightfly-colors", as = "nightfly" }
-  -- use 'oxfist/night-owl.nvim'
+   "folke/tokyonight.nvim",
+  --  "Julpikar/night-owl.nvim"
+  -- "dracula/vim"
+   "EdenEast/nightfox.nvim",
+   { "catppuccin/nvim", as = "catppuccin" },
+   "ellisonleao/gruvbox.nvim",
+   "olimorris/onedarkpro.nvim",
+   "rebelot/kanagawa.nvim",
+   "arturfil/night-wolf.nvim",
+  { "bluz71/vim-nightfly-colors", as = "nightfly" },
+  --  'oxfist/night-owl.nvim'
 
   -- autopairs
-  use "windwp/nvim-autopairs"
-  use "windwp/nvim-ts-autotag"
+   "windwp/nvim-autopairs",
+   "windwp/nvim-ts-autotag",
 
   -- terminal line
-  use "nvim-lualine/lualine.nvim"
+   "nvim-lualine/lualine.nvim",
 
   -- necessary for side-bar & telescope
-  use "nvim-tree/nvim-tree.lua"
-  use "nvim-tree/nvim-web-devicons"
-  use "nvim-treesitter/nvim-treesitter"
+   "nvim-tree/nvim-tree.lua",
+   "nvim-tree/nvim-web-devicons",
+   "nvim-treesitter/nvim-treesitter",
 
   -- debugger
-  -- use "puremourning/vimspector"
-  use "mfussenegger/nvim-dap"
-  use "rcarriga/nvim-dap-ui"
+  --  "puremourning/vimspector"
+   "mfussenegger/nvim-dap",
+   "rcarriga/nvim-dap-ui",
 
   -- python debugger
   -- { "mfussenegger/nvim-dap-python",
@@ -57,47 +56,48 @@ return require("packer").startup(function(use)
   -- } 
 
   -- go debbuger
-  use "leoluz/nvim-dap-go"
+   "leoluz/nvim-dap-go",
 
   -- completion plugins 
-  use "hrsh7th/nvim-cmp"
-  use "hrsh7th/cmp-buffer"
-  use "hrsh7th/cmp-path"
-  use "hrsh7th/cmp-nvim-lsp"
+   "hrsh7th/nvim-cmp",
+   "hrsh7th/cmp-buffer",
+   "hrsh7th/cmp-path",
+   "hrsh7th/cmp-nvim-lsp",
 
   -- navigation
-  use "christoomey/vim-tmux-navigator"
+   "christoomey/vim-tmux-navigator",
 
   -- snippets
-  use "L3MON4D3/LuaSnip"
-  use "rafamadriz/friendly-snippets"
-  use "saadparwaiz1/cmp_luasnip"
+   "L3MON4D3/LuaSnip",
+   "rafamadriz/friendly-snippets",
+   "saadparwaiz1/cmp_luasnip",
 
   -- formatters
-  use "jose-elias-alvarez/null-ls.nvim"
-  use "jayp0521/mason-null-ls.nvim"
+   "jose-elias-alvarez/null-ls.nvim",
+   "jayp0521/mason-null-ls.nvim",
 
   -- lsp -> language server protocol
-  use {
+   {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
-     "glepnir/lspsaga.nvim", branc = "main", -- for window vscode recommend
+    -- "glepnir/lspsaga.nvim", branc = "main", -- for window vscode recommend
     "jose-elias-alvarez/typescript.nvim",
-    "onsails/lspkind.nvim"
-  }
-  use 'simrat39/rust-tools.nvim'
+    "onsails/lspkind.nvim",
+  },
+   'simrat39/rust-tools.nvim',
 
   -- View, preview screen
-  use {
+   {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.0",
-    requires = {{"nvim-lua/plenary.nvim"}}
+    dependencies = {{"nvim-lua/plenary.nvim"}},
   }
 
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  if packer_bootstrap then
-    require("packer").sync()
-  end
-end)
+
+}
+
+local opts = {}
+
+require("lazy").setup(plugins, opts)
+
