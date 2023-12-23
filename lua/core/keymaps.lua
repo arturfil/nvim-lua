@@ -16,5 +16,6 @@ vim.api.nvim_set_keymap('i', 'jk', '<ESC>', { noremap = true })
 -- This keymap clears the search
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 vim.keymap.set("n", "<leader>ee", "oif err != nil {<CR>}<Esc>Oreturn err")
+vim.keymap.set("n", "<leader>ff", ":!gofmt -w %<CR><CR>")
 
 

@@ -81,7 +81,7 @@ local plugins = {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
-    -- "glepnir/lspsaga.nvim", branc = "main", -- for window vscode recommend
+    "glepnir/lspsaga.nvim", branc = "main", -- for window vscode recommend
     "jose-elias-alvarez/typescript.nvim",
     "onsails/lspkind.nvim",
   },
