@@ -23,6 +23,7 @@ local plugins = {
    "olimorris/onedarkpro.nvim",
    "rebelot/kanagawa.nvim",
    "arturfil/night-wolf.nvim",
+   "rafi/awesome-vim-colorschemes",
   { "bluz71/vim-nightfly-colors", as = "nightfly" },
   --  'oxfist/night-owl.nvim'
 
